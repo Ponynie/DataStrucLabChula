@@ -75,7 +75,7 @@ public class BST {
             else { //ลูก 2
                 int maxValueLeftSubTree = getMax(node.getLeft()); //หาค่ามากสุดของ subTree ฝั่งซ้าย
                 node.setElement(maxValueLeftSubTree); //เอา node นี้ที่จะลบ set เป็นค่านั้นทับลงไป
-                remove(node.getLeft(), maxValueLeftSubTree); //เรียก method นี้ซ้ำเพื่อลบ node ที่เป็นเจ้าของค่าที่ถูกสลับทื่ไปแล้วทิ้ง
+                node.setLeft(remove(node.getLeft(), maxValueLeftSubTree)); //เรียก method นี้ซ้ำเพื่อลบ node ที่เป็นเจ้าของค่าที่ถูกสลับทื่ไปแล้วทิ้ง
                 return node; // set ให้ตัว node นี้เองเป็นตัวเองเพราะมีการสลับค่ากันแล้ว
             }
         }

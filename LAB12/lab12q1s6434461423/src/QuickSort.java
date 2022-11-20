@@ -5,7 +5,7 @@ public class QuickSort {
     }
     //private----------------------------------------------
     private void quicksort(int[]ar, int f , int l) {
-        if (f >= 0 && l >= 0 && f < l) {
+        if (f >= 0 && l >= 0 && f < l) {//**break case if not satisfied
             int split = partition(ar, f, l);
             quicksort(ar, f, split);
             quicksort(ar, split + 1, l);

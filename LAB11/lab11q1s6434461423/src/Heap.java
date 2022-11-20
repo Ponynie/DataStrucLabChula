@@ -23,22 +23,12 @@ public class Heap {
     }
     private void siftDown(int i) {
         if (leftIndex(i) == 0 && rightIndex(i) == 0) return;
-        else if (leftIndex(i) == 0) {
-            if (arr[i] < arr[rightIndex(i)]) {
-                swap(i, arr[rightIndex(i)]);
-                siftDown(rightIndex(i));
-            }
-            else return;
-        }
         else if (rightIndex(i) == 0) {
-            if (arr[i] < arr[leftIndex(i)]) {
-                swap(i, arr[leftIndex(i)]);
-                siftDown(leftIndex(i));
-            }
-            else return;
+            if (arr[i] < arr[leftIndex(i)]) swap(i, leftIndex(i));
+            return;
         }
-        else if (arr[i] >= arr[leftIndex(i)] && arr[i] >= arr[rightIndex(i)]) return;
         else {
+            if (arr[i] >= arr[leftIndex(i)] && arr[i] >= arr[rightIndex(i)]) return;
             if (arr[leftIndex(i)] > arr[rightIndex(i)]) {
                 swap(i, leftIndex(i));
                 siftDown(leftIndex(i));
